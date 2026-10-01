@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lập hợp đồng · TroPro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="app-loading" data-page="hop-dong" data-title="Lập hợp đồng" data-perm="hopdong.edit">
+<div class="app-shell">
+  <aside class="app-sidebar" id="appSidebar"></aside>
+  <div class="app-main">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-content">
+      <!-- Dữ liệu trên trang là minh họa, sẽ được render bằng JS khi nối dữ liệu -->
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="hop-dong.html">Hợp đồng</a></li>
+          <li class="breadcrumb-item active">Lập hợp đồng mới</li>
+        </ol>
+      </nav>
+      <div class="page-head">
+        <div>
+          <h2>Lập hợp đồng thuê phòng</h2>
+          <p>Chỉ chọn được phòng đang trống. Hệ thống tự tạo tài khoản cho người đại diện (tên đăng nhập là SĐT).</p>
+        </div>
+      </div>
+
+      <form id="hopDongForm" novalidate>
+        <div class="row g-3">
+          <div class="col-lg-8">
+            <!-- Bước 1: chọn phòng -->
+            <div class="card mb-3">
+              <div class="card-header"><div class="step-title"><span class="step-num">1</span>Chọn phòng</div></div>
+              <div class="card-body">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label">Khu trọ *</label>
+                    <select class="form-select" name="khuId" required>
+                      <option>Khu A – Hòa Bình</option><option>Khu B – An Phú</option><option>Khu C – Sen Vàng</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Phòng trống *</label>
+                    <select class="form-select" name="phongId" required>
+                      <option value="">-- Chọn phòng --</option>
+                      <option>A104 · 25 m² · 2.600.000 đ</option>
+                      <option>A204 · 17 m² · 2.100.000 đ</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bước 2: người đại diện -->
+            <div class="card mb-3">
+              <div class="card-header">
+                <div class="step-title"><span class="step-num">2</span>Người đại diện phòng</div>
+                <div class="btn-group btn-group-sm" role="group">
+                  <input type="radio" class="btn-check" name="loaiKhach" id="khachMoi" value="moi" checked>
+                  <label class="btn btn-outline-primary" for="khachMoi">Khách mới</label>
+                  <input type="radio" class="btn-check" name="loaiKhach" id="khachCu" value="cu">
+                  <label class="btn btn-outline-primary" for="khachCu">Khách cũ</label>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="row g-3">
+                  <div class="col-12 d-none" id="chonKhachCu">
+                    <label class="form-label">Chọn khách đã có trong hệ thống</label>
+                    <select class="form-select" name="khachId"><option value="">-- Chọn khách --</option><option>Kiều Thị Phương Thảo · 0920177786</option></select>
+                  </div>
+                  <div class="col-md-6"><label class="form-label">Họ tên *</label><input class="form-control" name="hoTen" required></div>
+                  <div class="col-md-3"><label class="form-label">Giới tính</label><select class="form-select" name="gioiTinh"><option>Nam</option><option>Nữ</option><option>Khác</option></select></div>
+                  <div class="col-md-3"><label class="form-label">Ngày sinh</label><input type="date" class="form-control" name="ngaySinh"></div>
+                  <div class="col-md-6"><label class="form-label">Số điện thoại *</label><input class="form-control" name="sdt" placeholder="10 số, bắt đầu bằng 0" required></div>
+                  <div class="col-md-6"><label class="form-label">Số CCCD *</label><input class="form-control" name="cccd" placeholder="12 chữ số" required></div>
+                  <div class="col-md-6"><label class="form-label">Quê quán</label><input class="form-control" name="queQuan"></div>
+                  <div class="col-md-6"><label class="form-label">Nghề nghiệp</label><input class="form-control" name="ngheNghiep"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bước 3: điều khoản -->
+            <div class="card mb-3">
+              <div class="card-header"><div class="step-title"><span class="step-num">3</span>Điều khoản hợp đồng</div></div>
+              <div class="card-body">
+                <div class="row g-3">
+                  <div class="col-md-4"><label class="form-label">Ngày bắt đầu *</label><input type="date" class="form-control" name="ngayBatDau" required></div>
+                  <div class="col-md-4">
+                    <label class="form-label">Thời hạn</label>
+                    <select class="form-select" name="thoiHan"><option value="6">6 tháng</option><option value="12" selected>12 tháng</option><option value="24">24 tháng</option><option value="">Tự nhập</option></select>
+                  </div>
+                  <div class="col-md-4"><label class="form-label">Ngày kết thúc *</label><input type="date" class="form-control" name="ngayKetThuc" required></div>
+                  <div class="col-md-4"><label class="form-label">Giá thuê (đ/tháng) *</label><input type="number" class="form-control" name="giaThue" value="2600000" step="50000" required></div>
+                  <div class="col-md-4"><label class="form-label">Tiền cọc (đ) *</label><input type="number" class="form-control" name="tienCoc" value="2600000" step="50000" required></div>
+                  <div class="col-md-4"><label class="form-label">Số người ở *</label><input type="number" class="form-control" name="soNguoiO" value="1" min="1" max="4" required><div class="form-text">Tối đa 4 người</div></div>
+                  <div class="col-md-6"><label class="form-label">Chỉ số điện ban đầu *</label><div class="input-group"><input type="number" class="form-control" name="chiSoDienDau" value="2876" min="0" required><span class="input-group-text">kWh</span></div></div>
+                  <div class="col-md-6"><label class="form-label">Chỉ số nước ban đầu *</label><div class="input-group"><input type="number" class="form-control" name="chiSoNuocDau" value="352" min="0" required><span class="input-group-text">m³</span></div></div>
+                  <div class="col-12"><label class="form-label">Ghi chú / điều khoản thêm</label><textarea class="form-control" name="ghiChu" rows="2"></textarea></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tóm tắt -->
+          <div class="col-lg-4">
+            <div class="card summary-card">
+              <div class="card-header"><h3 class="card-title">Tóm tắt hợp đồng</h3></div>
+              <div class="card-body">
+                <div class="summary-row"><span class="text-muted">Phòng</span><strong>A104 · Khu A</strong></div>
+                <div class="summary-row"><span class="text-muted">Thời hạn</span><span>12 tháng</span></div>
+                <div class="summary-row"><span class="text-muted">Giá thuê</span><span class="money">2.600.000 đ</span></div>
+                <div class="summary-row"><span class="text-muted">Điện / nước</span><span>3.500 đ · 18.000 đ/m³</span></div>
+                <div class="summary-row"><span class="text-muted">Dịch vụ</span><span class="money">120.000 đ/tháng</span></div>
+                <div class="summary-row total"><span>Tiền cọc thu ngay</span><span class="text-brand money">2.600.000 đ</span></div>
+                <div class="alert alert-info small mt-3 mb-0"><i class="bi bi-info-circle me-1"></i>Sau khi lưu, phòng chuyển sang <strong>Đang thuê</strong> và không thể lập thêm hợp đồng khác cho phòng này.</div>
+              </div>
+              <div class="card-footer bg-transparent d-grid gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-check2-circle me-1"></i>Lưu hợp đồng</button>
+                <a href="hop-dong.html" class="btn btn-light border">Hủy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </main>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../config/app-config.js"></script>
+<script src="../assets/js/core/utils.js"></script>
+<script src="../assets/js/core/store.js"></script>
+<script src="../assets/js/services/nguoiDung.js"></script>
+<script src="../database/seed.js"></script>
+<script src="../assets/js/core/auth.js"></script>
+<script src="../assets/js/core/layout.js"></script>
+<script src="../assets/js/core/boot.js"></script>
+</body>
+</html>

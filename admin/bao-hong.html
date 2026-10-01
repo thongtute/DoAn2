@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Báo hỏng · TroPro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="app-loading" data-page="bao-hong" data-title="Báo hỏng" data-perm="baohong.xuly">
+<div class="app-shell">
+  <aside class="app-sidebar" id="appSidebar"></aside>
+  <div class="app-main">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-content">
+      <!-- Dữ liệu trên trang là minh họa, sẽ được render bằng JS khi nối dữ liệu -->
+      <div class="page-head">
+        <div>
+          <h2>Yêu cầu sửa chữa</h2>
+          <p>Khách thuê gửi báo hỏng từ cổng khách thuê; chủ trọ/nhân viên tiếp nhận và cập nhật tiến độ.</p>
+        </div>
+      </div>
+
+      <ul class="nav nav-pills mb-3 gap-1">
+        <li class="nav-item"><a class="nav-link active" href="#">Tất cả <span class="badge text-bg-light ms-1">4</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Mới <span class="badge text-bg-danger ms-1">2</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Đang xử lý <span class="badge text-bg-light ms-1">1</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Đã xong <span class="badge text-bg-light ms-1">1</span></a></li>
+      </ul>
+
+      <div class="row g-3">
+        <div class="col-md-6 col-xl-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <div class="d-flex justify-content-between mb-2">
+                <span class="badge rounded-pill text-bg-danger st-badge">Mới</span>
+                <span class="badge rounded-pill text-bg-danger st-badge">Khẩn cấp</span>
+              </div>
+              <h6 class="fw-semibold mb-1">Ổ khóa cửa bị kẹt</h6>
+              <p class="small text-muted mb-3">Ổ khóa cửa chính khó mở, phải xoay nhiều lần mới mở được.</p>
+              <div class="small"><i class="bi bi-door-open me-1"></i>C201 · Khu C – Sen Vàng</div>
+              <div class="small"><i class="bi bi-person me-1"></i>Châu Văn Lộc · <i class="bi bi-clock me-1"></i>01/10/2026</div>
+            </div>
+            <div class="card-footer bg-transparent d-flex gap-2">
+              <button class="btn btn-sm btn-primary flex-fill">Tiếp nhận</button>
+              <button class="btn btn-sm btn-light border flex-fill">Đã xong</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <div class="d-flex justify-content-between mb-2">
+                <span class="badge rounded-pill text-bg-danger st-badge">Mới</span>
+                <span class="badge rounded-pill text-bg-info st-badge">Trung bình</span>
+              </div>
+              <h6 class="fw-semibold mb-1">Vòi nước bồn rửa bị rỉ</h6>
+              <p class="small text-muted mb-3">Vòi nước ở bồn rửa trong nhà vệ sinh bị rỉ nước liên tục, nhờ anh/chị kiểm tra giúp.</p>
+              <div class="small"><i class="bi bi-door-open me-1"></i>A101 · Khu A – Hòa Bình</div>
+              <div class="small"><i class="bi bi-person me-1"></i>Nguyễn Văn An · <i class="bi bi-clock me-1"></i>30/09/2026</div>
+            </div>
+            <div class="card-footer bg-transparent d-flex gap-2">
+              <button class="btn btn-sm btn-primary flex-fill">Tiếp nhận</button>
+              <button class="btn btn-sm btn-light border flex-fill">Đã xong</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <div class="d-flex justify-content-between mb-2">
+                <span class="badge rounded-pill text-bg-warning st-badge">Đang xử lý</span>
+                <span class="badge rounded-pill text-bg-secondary st-badge">Thấp</span>
+              </div>
+              <h6 class="fw-semibold mb-1">Bóng đèn phòng tắm bị cháy</h6>
+              <p class="small text-muted mb-2">Bóng đèn trong phòng tắm bị cháy từ tối hôm qua, nhờ thay giúp em.</p>
+              <div class="alert alert-light border small py-2 mb-3"><i class="bi bi-reply me-1"></i>Đã ghi nhận, chiều mai thợ sẽ qua thay.</div>
+              <div class="small"><i class="bi bi-door-open me-1"></i>A202 · Khu A – Hòa Bình</div>
+              <div class="small"><i class="bi bi-person me-1"></i>Võ Thị Thu Hà · <i class="bi bi-clock me-1"></i>28/09/2026</div>
+            </div>
+            <div class="card-footer bg-transparent d-flex gap-2">
+              <button class="btn btn-sm btn-light border flex-fill">Cập nhật</button>
+              <button class="btn btn-sm btn-success flex-fill">Đã xong</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../config/app-config.js"></script>
+<script src="../assets/js/core/utils.js"></script>
+<script src="../assets/js/core/store.js"></script>
+<script src="../assets/js/services/nguoiDung.js"></script>
+<script src="../database/seed.js"></script>
+<script src="../assets/js/core/auth.js"></script>
+<script src="../assets/js/core/layout.js"></script>
+<script src="../assets/js/core/boot.js"></script>
+</body>
+</html>

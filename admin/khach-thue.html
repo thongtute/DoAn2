@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Khách thuê · TroPro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="app-loading" data-page="khach-thue" data-title="Khách thuê" data-perm="khach.view">
+<div class="app-shell">
+  <aside class="app-sidebar" id="appSidebar"></aside>
+  <div class="app-main">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-content">
+      <!-- Dữ liệu trên trang là minh họa, sẽ được render bằng JS khi nối dữ liệu -->
+      <div class="page-head">
+        <div>
+          <h2>Khách thuê</h2>
+          <p>Danh sách người đại diện phòng (người ký hợp đồng và thanh toán).</p>
+        </div>
+        <div class="actions">
+          <a href="hop-dong-form.html" class="btn btn-primary"><i class="bi bi-person-plus me-1"></i>Thêm khách (lập hợp đồng)</a>
+        </div>
+      </div>
+
+      <div class="card table-card">
+        <div class="card-header">
+          <div class="filter-bar">
+            <select class="form-select form-select-sm"><option>Tất cả khu</option><option>Khu A – Hòa Bình</option><option>Khu B – An Phú</option><option>Khu C – Sen Vàng</option></select>
+            <select class="form-select form-select-sm"><option>Tất cả</option><option>Đang thuê</option><option>Đã rời đi</option></select>
+          </div>
+          <input type="search" class="form-control form-control-sm search" style="max-width:260px" placeholder="Tìm tên, SĐT, CCCD...">
+        </div>
+        <div class="table-responsive">
+          <table class="table table-hover" id="khachTable">
+            <thead>
+              <tr><th>Họ tên</th><th>Số điện thoại</th><th>CCCD</th><th>Quê quán</th><th>Phòng</th><th>Trạng thái</th><th class="actions-col"></th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="d-flex align-items-center gap-2"><span class="avatar">VA</span><div><div class="cell-main">Nguyễn Văn An</div><div class="cell-sub">Nam · 1998</div></div></div></td>
+                <td>0912000100</td><td>079200012345</td><td>Cần Thơ</td>
+                <td>A101<div class="cell-sub">Khu A – Hòa Bình</div></td>
+                <td><span class="badge rounded-pill text-bg-success st-badge">Đang thuê</span></td>
+                <td class="actions-col"><button class="btn btn-light border btn-act" data-bs-toggle="modal" data-bs-target="#khachModal" title="Sửa"><i class="bi bi-pencil"></i></button> <a href="phong-chi-tiet.html" class="btn btn-light border btn-act" title="Xem phòng"><i class="bi bi-door-open"></i></a></td>
+              </tr>
+              <tr>
+                <td><div class="d-flex align-items-center gap-2"><span class="avatar">BN</span><div><div class="cell-main">Trần Thị Bích Ngọc</div><div class="cell-sub">Nữ · 2001</div></div></div></td>
+                <td>0912371813</td><td>079201370256</td><td>Đồng Tháp</td>
+                <td>A102<div class="cell-sub">Khu A – Hòa Bình</div></td>
+                <td><span class="badge rounded-pill text-bg-success st-badge">Đang thuê</span></td>
+                <td class="actions-col"><button class="btn btn-light border btn-act" data-bs-toggle="modal" data-bs-target="#khachModal" title="Sửa"><i class="bi bi-pencil"></i></button> <a href="phong-chi-tiet.html" class="btn btn-light border btn-act" title="Xem phòng"><i class="bi bi-door-open"></i></a></td>
+              </tr>
+              <tr>
+                <td><div class="d-flex align-items-center gap-2"><span class="avatar">HP</span><div><div class="cell-main">Lê Hoàng Phúc</div><div class="cell-sub">Nam · 1995</div></div></div></td>
+                <td>0912743526</td><td>079202728167</td><td>Bến Tre</td>
+                <td>A103<div class="cell-sub">Khu A – Hòa Bình</div></td>
+                <td><span class="badge rounded-pill text-bg-success st-badge">Đang thuê</span></td>
+                <td class="actions-col"><button class="btn btn-light border btn-act" data-bs-toggle="modal" data-bs-target="#khachModal" title="Sửa"><i class="bi bi-pencil"></i></button> <a href="phong-chi-tiet.html" class="btn btn-light border btn-act" title="Xem phòng"><i class="bi bi-door-open"></i></a></td>
+              </tr>
+              <tr>
+                <td><div class="d-flex align-items-center gap-2"><span class="avatar">PT</span><div><div class="cell-main">Kiều Thị Phương Thảo</div><div class="cell-sub">Nữ · 1997</div></div></div></td>
+                <td>0920177786</td><td>079229886387</td><td>Long An</td>
+                <td>A104<div class="cell-sub">Khu A – Hòa Bình</div></td>
+                <td><span class="badge rounded-pill text-bg-secondary st-badge">Đã rời đi</span></td>
+                <td class="actions-col"><button class="btn btn-light border btn-act" data-bs-toggle="modal" data-bs-target="#khachModal" title="Sửa"><i class="bi bi-pencil"></i></button> <a href="phong-chi-tiet.html" class="btn btn-light border btn-act" title="Xem phòng"><i class="bi bi-door-open"></i></a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<!-- Modal sửa thông tin khách -->
+<div class="modal fade" id="khachModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <form class="modal-content" id="khachForm" novalidate>
+      <div class="modal-header">
+        <h5 class="modal-title">Thông tin khách thuê</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" name="id">
+        <div class="row g-3">
+          <div class="col-md-6"><label class="form-label">Họ tên *</label><input class="form-control" name="hoTen" required></div>
+          <div class="col-md-3"><label class="form-label">Giới tính</label><select class="form-select" name="gioiTinh"><option>Nam</option><option>Nữ</option><option>Khác</option></select></div>
+          <div class="col-md-3"><label class="form-label">Ngày sinh</label><input type="date" class="form-control" name="ngaySinh"></div>
+          <div class="col-md-6"><label class="form-label">Số điện thoại *</label><input class="form-control" name="sdt" required></div>
+          <div class="col-md-6"><label class="form-label">Số CCCD *</label><input class="form-control" name="cccd" required></div>
+          <div class="col-md-6"><label class="form-label">Quê quán</label><input class="form-control" name="queQuan"></div>
+          <div class="col-md-6"><label class="form-label">Nghề nghiệp</label><input class="form-control" name="ngheNghiep"></div>
+          <div class="col-12"><label class="form-label">Email</label><input type="email" class="form-control" name="email"></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Hủy</button>
+        <button type="submit" class="btn btn-primary">Lưu thông tin</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../config/app-config.js"></script>
+<script src="../assets/js/core/utils.js"></script>
+<script src="../assets/js/core/store.js"></script>
+<script src="../assets/js/services/nguoiDung.js"></script>
+<script src="../database/seed.js"></script>
+<script src="../assets/js/core/auth.js"></script>
+<script src="../assets/js/core/layout.js"></script>
+<script src="../assets/js/core/boot.js"></script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Khu trọ · TroPro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="app-loading" data-page="khu-tro" data-title="Khu trọ" data-perm="khutro">
+<div class="app-shell">
+  <aside class="app-sidebar" id="appSidebar"></aside>
+  <div class="app-main">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-content">
+      <!-- Dữ liệu trên trang là minh họa, sẽ được render bằng JS khi nối dữ liệu -->
+      <div class="page-head">
+        <div>
+          <h2>Khu trọ</h2>
+          <p>Mỗi khu trọ có giá điện, nước và các khoản dịch vụ riêng.</p>
+        </div>
+        <div class="actions">
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#khuModal"><i class="bi bi-plus-lg me-1"></i>Thêm khu trọ</button>
+        </div>
+      </div>
+
+      <div class="row g-3" id="khuList">
+        <!-- Thẻ khu trọ (minh họa) -->
+        <div class="col-md-6 col-xl-4">
+          <div class="card khu-card h-100">
+            <div class="khu-cover">
+              <small class="opacity-75">12 phòng · 3 tầng</small>
+              <h5>Khu A – Hòa Bình</h5>
+            </div>
+            <div class="card-body">
+              <p class="small text-muted mb-3"><i class="bi bi-geo-alt me-1"></i>25/4 Đường số 8, P. Linh Trung, TP. Thủ Đức</p>
+              <div class="khu-stats mb-3">
+                <div><div class="v text-success">9</div><div class="l">Đang thuê</div></div>
+                <div><div class="v">2</div><div class="l">Trống</div></div>
+                <div><div class="v" style="color:var(--st-baotri)">1</div><div class="l">Bảo trì</div></div>
+              </div>
+              <div class="d-flex justify-content-between small mb-1"><span class="text-muted">Lấp đầy</span><strong>75%</strong></div>
+              <div class="progress mb-3"><div class="progress-bar" style="width:75%"></div></div>
+              <div class="small">
+                <div class="d-flex justify-content-between py-1"><span class="text-muted">Điện</span><span>3.500 đ/kWh</span></div>
+                <div class="d-flex justify-content-between py-1"><span class="text-muted">Nước</span><span>18.000 đ/m³</span></div>
+                <div class="d-flex justify-content-between py-1"><span class="text-muted">Dịch vụ</span><span>Internet 100.000 · Rác 20.000</span></div>
+              </div>
+            </div>
+            <div class="card-footer bg-transparent d-flex gap-2">
+              <a href="phong.html" class="btn btn-sm btn-outline-primary flex-fill"><i class="bi bi-grid-3x3-gap me-1"></i>Sơ đồ phòng</a>
+              <button class="btn btn-sm btn-light border" data-bs-toggle="modal" data-bs-target="#khuModal" title="Sửa"><i class="bi bi-pencil"></i></button>
+              <button class="btn btn-sm btn-light border text-danger" title="Xóa"><i class="bi bi-trash"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-4">
+          <div class="card khu-card h-100">
+            <div class="khu-cover c2">
+              <small class="opacity-75">10 phòng · 2 tầng</small>
+              <h5>Khu B – An Phú</h5>
+            </div>
+            <div class="card-body">
+              <p class="small text-muted mb-3"><i class="bi bi-geo-alt me-1"></i>118 Nguyễn Duy Trinh, P. Bình Trưng Tây, TP. Thủ Đức</p>
+              <div class="khu-stats mb-3">
+                <div><div class="v text-success">7</div><div class="l">Đang thuê</div></div>
+                <div><div class="v">3</div><div class="l">Trống</div></div>
+                <div><div class="v" style="color:var(--st-baotri)">0</div><div class="l">Bảo trì</div></div>
+              </div>
+              <div class="d-flex justify-content-between small mb-1"><span class="text-muted">Lấp đầy</span><strong>70%</strong></div>
+              <div class="progress mb-3"><div class="progress-bar" style="width:70%"></div></div>
+              <div class="small">
+                <div class="d-flex justify-content-between py-1"><span class="text-muted">Điện</span><span>3.800 đ/kWh</span></div>
+                <div class="d-flex justify-content-between py-1"><span class="text-muted">Nước</span><span>100.000 đ/người</span></div>
+                <div class="d-flex justify-content-between py-1"><span class="text-muted">Dịch vụ</span><span>Internet 80.000 · Gửi xe 100.000/người</span></div>
+              </div>
+            </div>
+            <div class="card-footer bg-transparent d-flex gap-2">
+              <a href="phong.html" class="btn btn-sm btn-outline-primary flex-fill"><i class="bi bi-grid-3x3-gap me-1"></i>Sơ đồ phòng</a>
+              <button class="btn btn-sm btn-light border" data-bs-toggle="modal" data-bs-target="#khuModal" title="Sửa"><i class="bi bi-pencil"></i></button>
+              <button class="btn btn-sm btn-light border text-danger" title="Xóa"><i class="bi bi-trash"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-4">
+          <div class="card khu-card h-100">
+            <div class="khu-cover c3">
+              <small class="opacity-75">8 phòng · 2 tầng</small>
+              <h5>Khu C – Sen Vàng</h5>
+            </div>
+            <div class="card-body">
+              <p class="small text-muted mb-3"><i class="bi bi-geo-alt me-1"></i>7 Hẻm 42 Lê Văn Việt, P. Hiệp Phú, TP. Thủ Đức</p>
+              <div class="khu-stats mb-3">
+                <div><div class="v text-success">6</div><div class="l">Đang thuê</div></div>
+                <div><div class="v">1</div><div class="l">Trống</div></div>
+                <div><div class="v" style="color:var(--st-baotri)">1</div><div class="l">Bảo trì</div></div>
+              </div>
+              <div class="d-flex justify-content-between small mb-1"><span class="text-muted">Lấp đầy</span><strong>75%</strong></div>
+              <div class="progress mb-3"><div class="progress-bar" style="width:75%"></div></div>
+              <div class="small">
+                <div class="d-flex justify-content-between py-1"><span class="text-muted">Điện</span><span>3.500 đ/kWh</span></div>
+                <div class="d-flex justify-content-between py-1"><span class="text-muted">Nước</span><span>20.000 đ/m³</span></div>
+                <div class="d-flex justify-content-between py-1"><span class="text-muted">Dịch vụ</span><span>Internet · Rác · Vệ sinh</span></div>
+              </div>
+            </div>
+            <div class="card-footer bg-transparent d-flex gap-2">
+              <a href="phong.html" class="btn btn-sm btn-outline-primary flex-fill"><i class="bi bi-grid-3x3-gap me-1"></i>Sơ đồ phòng</a>
+              <button class="btn btn-sm btn-light border" data-bs-toggle="modal" data-bs-target="#khuModal" title="Sửa"><i class="bi bi-pencil"></i></button>
+              <button class="btn btn-sm btn-light border text-danger" title="Xóa"><i class="bi bi-trash"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<!-- Modal thêm/sửa khu trọ -->
+<div class="modal fade" id="khuModal" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <form class="modal-content" id="khuForm" novalidate>
+      <div class="modal-header">
+        <h5 class="modal-title">Thêm khu trọ</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" name="id">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label">Tên khu trọ *</label>
+            <input class="form-control" name="ten" placeholder="VD: Khu A – Hòa Bình" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Địa chỉ</label>
+            <input class="form-control" name="diaChi" placeholder="Số nhà, đường, phường, quận">
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Giá điện (đ/kWh) *</label>
+            <input type="number" class="form-control" name="giaDien" value="3500" min="0" step="100" required>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Cách tính nước</label>
+            <select class="form-select" name="cachTinhNuoc">
+              <option value="m3">Theo m³ (đồng hồ)</option>
+              <option value="nguoi">Theo đầu người</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Giá nước *</label>
+            <div class="input-group">
+              <input type="number" class="form-control" name="giaNuoc" value="20000" min="0" step="1000" required>
+              <span class="input-group-text">đ/m³</span>
+            </div>
+          </div>
+          <div class="col-12">
+            <label class="form-label d-flex justify-content-between align-items-center">
+              <span>Dịch vụ cố định hằng tháng</span>
+              <button type="button" class="btn btn-sm btn-link p-0"><i class="bi bi-plus-circle me-1"></i>Thêm dịch vụ</button>
+            </label>
+            <div class="table-responsive border rounded">
+              <table class="table table-sm mb-0">
+                <thead><tr><th>Tên dịch vụ</th><th style="width:160px">Đơn giá (đ)</th><th style="width:150px">Tính theo</th><th style="width:40px"></th></tr></thead>
+                <tbody id="dichVuRows">
+                  <tr>
+                    <td><input class="form-control form-control-sm" value="Internet"></td>
+                    <td><input type="number" class="form-control form-control-sm" value="100000"></td>
+                    <td><select class="form-select form-select-sm"><option value="phong">Mỗi phòng</option><option value="nguoi">Mỗi người</option></select></td>
+                    <td><button type="button" class="btn btn-sm text-danger"><i class="bi bi-x-lg"></i></button></td>
+                  </tr>
+                  <tr>
+                    <td><input class="form-control form-control-sm" value="Rác"></td>
+                    <td><input type="number" class="form-control form-control-sm" value="20000"></td>
+                    <td><select class="form-select form-select-sm"><option value="phong">Mỗi phòng</option><option value="nguoi">Mỗi người</option></select></td>
+                    <td><button type="button" class="btn btn-sm text-danger"><i class="bi bi-x-lg"></i></button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col-12">
+            <label class="form-label">Mô tả</label>
+            <textarea class="form-control" name="moTa" rows="2" placeholder="Ghi chú về khu trọ"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Hủy</button>
+        <button type="submit" class="btn btn-primary">Lưu khu trọ</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../config/app-config.js"></script>
+<script src="../assets/js/core/utils.js"></script>
+<script src="../assets/js/core/store.js"></script>
+<script src="../assets/js/services/nguoiDung.js"></script>
+<script src="../database/seed.js"></script>
+<script src="../assets/js/core/auth.js"></script>
+<script src="../assets/js/core/layout.js"></script>
+<script src="../assets/js/core/boot.js"></script>
+</body>
+</html>

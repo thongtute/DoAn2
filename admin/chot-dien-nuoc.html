@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chốt điện nước · TroPro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="app-loading" data-page="chot-dien-nuoc" data-title="Chốt điện nước" data-perm="chiso">
+<div class="app-shell">
+  <aside class="app-sidebar" id="appSidebar"></aside>
+  <div class="app-main">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-content">
+      <!-- Dữ liệu trên trang là minh họa, sẽ được render bằng JS khi nối dữ liệu -->
+      <div class="page-head">
+        <div>
+          <h2>Chốt chỉ số điện nước</h2>
+          <p>Nhập chỉ số mới cho cả khu, nhấn <kbd>Enter</kbd> để xuống phòng tiếp theo.</p>
+        </div>
+      </div>
+
+      <div class="card mb-3">
+        <div class="card-body py-2">
+          <div class="filter-bar">
+            <select class="form-select" id="csKhu"><option>Khu A – Hòa Bình</option><option>Khu B – An Phú</option><option>Khu C – Sen Vàng</option></select>
+            <input type="month" class="form-control" id="csThang" value="2026-09">
+            <span class="small text-muted ms-md-2"><i class="bi bi-info-circle me-1"></i>Điện 3.500 đ/kWh · Nước 18.000 đ/m³</span>
+            <span class="ms-auto small"><strong>6</strong>/9 phòng đã chốt</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card table-card">
+        <div class="table-responsive">
+          <table class="table" id="chiSoTable">
+            <thead>
+              <tr>
+                <th>Phòng</th><th>Người đại diện</th>
+                <th class="text-end">Điện cũ</th><th class="text-end">Điện mới</th><th class="text-end">Tiêu thụ</th>
+                <th class="text-end">Nước cũ</th><th class="text-end">Nước mới</th><th class="text-end">Tiêu thụ</th>
+                <th>Trạng thái</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="row-locked">
+                <td class="cell-main">A101</td><td>Nguyễn Văn An</td>
+                <td class="text-end">4.512</td><td class="text-end"><input type="number" class="form-control form-control-sm meter-input ms-auto" value="4641" disabled></td><td class="text-end meter-used">129</td>
+                <td class="text-end">402</td><td class="text-end"><input type="number" class="form-control form-control-sm meter-input ms-auto" value="410" disabled></td><td class="text-end meter-used">8</td>
+                <td><span class="badge rounded-pill text-bg-secondary st-badge"><i class="bi bi-lock me-1"></i>Đã lập hóa đơn</span></td>
+              </tr>
+              <tr>
+                <td class="cell-main">A102</td><td>Trần Thị Bích Ngọc</td>
+                <td class="text-end">3.208</td><td class="text-end"><input type="number" class="form-control form-control-sm meter-input ms-auto" value="3311"></td><td class="text-end meter-used">103</td>
+                <td class="text-end">215</td><td class="text-end"><input type="number" class="form-control form-control-sm meter-input ms-auto" value="221"></td><td class="text-end meter-used">6</td>
+                <td><span class="badge rounded-pill text-bg-success st-badge">Đã chốt</span></td>
+              </tr>
+              <tr>
+                <td class="cell-main">A103</td><td>Lê Hoàng Phúc</td>
+                <td class="text-end">5.920</td><td class="text-end"><input type="number" class="form-control form-control-sm meter-input ms-auto is-invalid" value="5900"></td><td class="text-end text-danger">-20</td>
+                <td class="text-end">601</td><td class="text-end"><input type="number" class="form-control form-control-sm meter-input ms-auto" placeholder="—"></td><td class="text-end text-muted">—</td>
+                <td><span class="badge rounded-pill text-bg-danger st-badge">Chỉ số sai</span></td>
+              </tr>
+              <tr>
+                <td class="cell-main">A201</td><td>Phạm Minh Tuấn</td>
+                <td class="text-end">1.744</td><td class="text-end"><input type="number" class="form-control form-control-sm meter-input ms-auto" placeholder="—"></td><td class="text-end text-muted">—</td>
+                <td class="text-end">133</td><td class="text-end"><input type="number" class="form-control form-control-sm meter-input ms-auto" placeholder="—"></td><td class="text-end text-muted">—</td>
+                <td><span class="badge rounded-pill text-bg-warning st-badge">Chưa chốt</span></td>
+              </tr>
+              <tr>
+                <td class="cell-main">A202</td><td>Võ Thị Thu Hà</td>
+                <td class="text-end">2.380</td><td class="text-end"><input type="number" class="form-control form-control-sm meter-input ms-auto" placeholder="—"></td><td class="text-end text-muted">—</td>
+                <td class="text-end">298</td><td class="text-end"><input type="number" class="form-control form-control-sm meter-input ms-auto" placeholder="—"></td><td class="text-end text-muted">—</td>
+                <td><span class="badge rounded-pill text-bg-warning st-badge">Chưa chốt</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card-footer bg-transparent d-flex flex-wrap gap-2 justify-content-between align-items-center">
+          <span class="small text-muted">Dòng có <i class="bi bi-lock"></i> đã lập hóa đơn nên không sửa được chỉ số.</span>
+          <div class="d-flex gap-2">
+            <button class="btn btn-light border"><i class="bi bi-save me-1"></i>Lưu chỉ số</button>
+            <button class="btn btn-primary"><i class="bi bi-receipt me-1"></i>Lưu &amp; tạo hóa đơn</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../config/app-config.js"></script>
+<script src="../assets/js/core/utils.js"></script>
+<script src="../assets/js/core/store.js"></script>
+<script src="../assets/js/services/nguoiDung.js"></script>
+<script src="../database/seed.js"></script>
+<script src="../assets/js/core/auth.js"></script>
+<script src="../assets/js/core/layout.js"></script>
+<script src="../assets/js/core/boot.js"></script>
+</body>
+</html>

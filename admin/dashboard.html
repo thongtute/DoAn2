@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bảng điều khiển · TroPro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="app-loading" data-page="dashboard" data-title="Bảng điều khiển" data-perm="dashboard">
+<div class="app-shell">
+  <aside class="app-sidebar" id="appSidebar"></aside>
+  <div class="app-main">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-content">
+      <!-- Dữ liệu trên trang là minh họa, sẽ được render bằng JS khi nối dữ liệu -->
+
+      <div class="page-head">
+        <div>
+          <h2>Xin chào 👋</h2>
+          <p>Tình hình kinh doanh tháng <strong id="curMonth">10/2026</strong> của các khu trọ.</p>
+        </div>
+        <div class="actions">
+          <a href="chot-dien-nuoc.html" class="btn btn-outline-primary"><i class="bi bi-lightning-charge me-1"></i>Chốt điện nước</a>
+          <a href="hop-dong-form.html" class="btn btn-primary"><i class="bi bi-plus-lg me-1"></i>Lập hợp đồng</a>
+        </div>
+      </div>
+
+      <!-- KPI -->
+      <div class="row g-3 mb-3">
+        <div class="col-6 col-xl-3">
+          <div class="card kpi">
+            <div class="kpi-icon tint-teal"><i class="bi bi-door-open"></i></div>
+            <div><div class="kpi-label">Tổng số phòng</div><div class="kpi-value">30</div><div class="kpi-sub">3 khu trọ</div></div>
+          </div>
+        </div>
+        <div class="col-6 col-xl-3">
+          <div class="card kpi">
+            <div class="kpi-icon tint-green"><i class="bi bi-person-check"></i></div>
+            <div><div class="kpi-label">Đang cho thuê</div><div class="kpi-value">22 <small class="fs-6 text-muted fw-normal">/ 30</small></div><div class="kpi-sub">Lấp đầy 73%</div></div>
+          </div>
+        </div>
+        <div class="col-6 col-xl-3">
+          <div class="card kpi">
+            <div class="kpi-icon tint-blue"><i class="bi bi-wallet2"></i></div>
+            <div><div class="kpi-label">Đã thu tháng này</div><div class="kpi-value money">38.450.000 đ</div><div class="kpi-sub text-success"><i class="bi bi-arrow-up-short"></i>8% so với tháng trước</div></div>
+          </div>
+        </div>
+        <div class="col-6 col-xl-3">
+          <div class="card kpi">
+            <div class="kpi-icon tint-red"><i class="bi bi-exclamation-octagon"></i></div>
+            <div><div class="kpi-label">Còn phải thu</div><div class="kpi-value money">16.920.000 đ</div><div class="kpi-sub">9 hóa đơn chưa thu đủ</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-3 mb-3">
+        <!-- Biểu đồ doanh thu -->
+        <div class="col-lg-8">
+          <div class="card h-100">
+            <div class="card-header">
+              <h3 class="card-title">Doanh thu 6 tháng gần nhất</h3>
+              <span class="small text-muted">Phát sinh / Thực thu</span>
+            </div>
+            <div class="card-body">
+              <div class="chart-box">
+                <div class="chart-placeholder"><i class="bi bi-bar-chart"></i><span>Biểu đồ cột (Chart.js) – sẽ vẽ khi nối dữ liệu</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tình trạng phòng -->
+        <div class="col-lg-4">
+          <div class="card h-100">
+            <div class="card-header"><h3 class="card-title">Tình trạng phòng</h3><a href="phong.html" class="small">Sơ đồ phòng</a></div>
+            <div class="card-body">
+              <div class="mb-3">
+                <div class="d-flex justify-content-between small mb-1"><span><span class="legend-dot st-dangThue me-2"></span>Đang thuê</span><strong>22</strong></div>
+                <div class="progress"><div class="progress-bar" style="width:73%;background:var(--st-thue)"></div></div>
+              </div>
+              <div class="mb-3">
+                <div class="d-flex justify-content-between small mb-1"><span><span class="legend-dot st-trong me-2"></span>Trống</span><strong>6</strong></div>
+                <div class="progress"><div class="progress-bar" style="width:20%;background:var(--st-trong)"></div></div>
+              </div>
+              <div class="mb-3">
+                <div class="d-flex justify-content-between small mb-1"><span><span class="legend-dot st-baoTri me-2"></span>Bảo trì</span><strong>2</strong></div>
+                <div class="progress"><div class="progress-bar" style="width:7%;background:var(--st-baotri)"></div></div>
+              </div>
+              <div class="dashed-sep"></div>
+              <div class="small text-muted mb-2">Theo khu</div>
+              <ul class="list-unstyled mb-0 small">
+                <li class="d-flex justify-content-between py-1"><span>Khu A – Hòa Bình</span><span><strong>9</strong>/12 phòng</span></li>
+                <li class="d-flex justify-content-between py-1"><span>Khu B – An Phú</span><span><strong>7</strong>/10 phòng</span></li>
+                <li class="d-flex justify-content-between py-1"><span>Khu C – Sen Vàng</span><span><strong>6</strong>/8 phòng</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Việc cần làm -->
+      <div class="row g-3 mb-3">
+        <div class="col-sm-6 col-xl-3">
+          <a href="chot-dien-nuoc.html" class="card kpi text-decoration-none text-reset">
+            <div class="kpi-icon tint-amber"><i class="bi bi-lightning-charge"></i></div>
+            <div><div class="kpi-label">Chưa chốt điện nước</div><div class="kpi-value">8 phòng</div><div class="kpi-sub">Tháng 09/2026</div></div>
+          </a>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+          <a href="hoa-don.html" class="card kpi text-decoration-none text-reset">
+            <div class="kpi-icon tint-red"><i class="bi bi-receipt"></i></div>
+            <div><div class="kpi-label">Hóa đơn quá hạn</div><div class="kpi-value">3</div><div class="kpi-sub">Cần nhắc khách thanh toán</div></div>
+          </a>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+          <a href="hop-dong.html" class="card kpi text-decoration-none text-reset">
+            <div class="kpi-icon tint-violet"><i class="bi bi-calendar-x"></i></div>
+            <div><div class="kpi-label">HĐ sắp/đã hết hạn</div><div class="kpi-value">4</div><div class="kpi-sub">Trong 30 ngày tới</div></div>
+          </a>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+          <a href="bao-hong.html" class="card kpi text-decoration-none text-reset">
+            <div class="kpi-icon tint-slate"><i class="bi bi-tools"></i></div>
+            <div><div class="kpi-label">Báo hỏng mới</div><div class="kpi-value">2</div><div class="kpi-sub">Chưa tiếp nhận</div></div>
+          </a>
+        </div>
+      </div>
+
+      <div class="row g-3">
+        <div class="col-lg-6">
+          <div class="card table-card h-100">
+            <div class="card-header"><h3 class="card-title">Hóa đơn quá hạn</h3><a href="cong-no.html" class="small">Xem công nợ</a></div>
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <thead><tr><th>Phòng</th><th>Khách thuê</th><th>Tháng</th><th class="text-end">Còn nợ</th></tr></thead>
+                <tbody>
+                  <tr><td class="cell-main">A201</td><td>Phạm Minh Tuấn</td><td>08/2026</td><td class="text-end money text-danger fw-semibold">2.986.000 đ</td></tr>
+                  <tr><td class="cell-main">B105</td><td>Dương Văn Khánh</td><td>08/2026</td><td class="text-end money text-danger fw-semibold">2.744.000 đ</td></tr>
+                  <tr><td class="cell-main">B203</td><td>Lý Thị Kim Ngân</td><td>08/2026</td><td class="text-end money text-danger fw-semibold">1.230.000 đ</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card table-card h-100">
+            <div class="card-header"><h3 class="card-title">Hợp đồng sắp hết hạn</h3><a href="hop-dong.html" class="small">Tất cả hợp đồng</a></div>
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <thead><tr><th>Phòng</th><th>Người đại diện</th><th>Ngày hết hạn</th><th>Tình trạng</th></tr></thead>
+                <tbody>
+                  <tr><td class="cell-main">A103</td><td>Lê Hoàng Phúc</td><td>14/09/2026</td><td><span class="badge rounded-pill text-bg-danger st-badge">Hết hạn</span></td></tr>
+                  <tr><td class="cell-main">A304</td><td>Ngô Thị Lan</td><td>22/10/2026</td><td><span class="badge rounded-pill text-bg-warning st-badge">Còn 21 ngày</span></td></tr>
+                  <tr><td class="cell-main">C202</td><td>Mai Thị Yến Nhi</td><td>27/10/2026</td><td><span class="badge rounded-pill text-bg-warning st-badge">Còn 26 ngày</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../config/app-config.js"></script>
+<script src="../assets/js/core/utils.js"></script>
+<script src="../assets/js/core/store.js"></script>
+<script src="../assets/js/services/nguoiDung.js"></script>
+<script src="../database/seed.js"></script>
+<script src="../assets/js/core/auth.js"></script>
+<script src="../assets/js/core/layout.js"></script>
+<script src="../assets/js/core/boot.js"></script>
+</body>
+</html>

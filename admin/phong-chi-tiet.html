@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chi tiết phòng · TroPro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="app-loading" data-page="phong" data-title="Chi tiết phòng" data-perm="phong.view">
+<div class="app-shell">
+  <aside class="app-sidebar" id="appSidebar"></aside>
+  <div class="app-main">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-content">
+      <!-- Dữ liệu trên trang là minh họa, sẽ được render bằng JS khi nối dữ liệu -->
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="phong.html">Phòng trọ</a></li>
+          <li class="breadcrumb-item">Khu A – Hòa Bình</li>
+          <li class="breadcrumb-item active">A101</li>
+        </ol>
+      </nav>
+
+      <div class="page-head">
+        <div class="d-flex align-items-center gap-3">
+          <div class="kpi-icon tint-green" style="width:56px;height:56px"><i class="bi bi-door-open"></i></div>
+          <div>
+            <h2 class="d-flex align-items-center gap-2">Phòng A101 <span class="badge rounded-pill text-bg-success st-badge">Đang thuê</span></h2>
+            <p>Khu A – Hòa Bình · Tầng 1 · 22 m²</p>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="btn btn-light border"><i class="bi bi-pencil me-1"></i>Sửa phòng</button>
+          <a href="hoa-don.html" class="btn btn-outline-primary"><i class="bi bi-cash-coin me-1"></i>Thu tiền</a>
+        </div>
+      </div>
+
+      <div class="row g-3">
+        <!-- Cột trái: thông tin phòng -->
+        <div class="col-lg-4">
+          <div class="card mb-3">
+            <div class="card-header"><h3 class="card-title">Thông tin phòng</h3></div>
+            <div class="card-body">
+              <dl class="info-list">
+                <dt>Giá thuê</dt><dd class="money">2.500.000 đ/tháng</dd>
+                <dt>Diện tích</dt><dd>22 m²</dd>
+                <dt>Số người tối đa</dt><dd>3 người</dd>
+                <dt>Giá điện</dt><dd>3.500 đ/kWh</dd>
+                <dt>Giá nước</dt><dd>18.000 đ/m³</dd>
+              </dl>
+              <div class="dashed-sep"></div>
+              <div class="small text-muted mb-2">Tiện nghi</div>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="badge text-bg-light border fw-normal">Máy lạnh</span>
+                <span class="badge text-bg-light border fw-normal">Nóng lạnh</span>
+                <span class="badge text-bg-light border fw-normal">WC riêng</span>
+                <span class="badge text-bg-light border fw-normal">Gác lửng</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header"><h3 class="card-title">Công nợ phòng</h3></div>
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="text-muted">Còn phải thu</span>
+                <span class="fs-5 fw-bold text-danger money">1.250.000 đ</span>
+              </div>
+              <div class="small text-muted mt-1">1 hóa đơn chưa thanh toán đủ</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cột phải: hợp đồng hiện tại + lịch sử -->
+        <div class="col-lg-8">
+          <div class="card mb-3">
+            <div class="card-header">
+              <h3 class="card-title"><i class="bi bi-file-earmark-text me-1 text-brand"></i>Hợp đồng hiện tại · HDT-0004</h3>
+              <span class="badge rounded-pill text-bg-success st-badge">Đang hiệu lực</span>
+            </div>
+            <div class="card-body">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="small text-muted mb-1">Người đại diện</div>
+                  <div class="d-flex align-items-center gap-2 mb-3">
+                    <span class="avatar">VA</span>
+                    <div><div class="fw-semibold">Nguyễn Văn An</div><div class="small text-muted"><i class="bi bi-telephone me-1"></i>0912000100</div></div>
+                  </div>
+                  <dl class="info-list">
+                    <dt>CCCD</dt><dd>079200012345</dd>
+                    <dt>Số người ở</dt><dd>2 người</dd>
+                  </dl>
+                </div>
+                <div class="col-md-6">
+                  <dl class="info-list">
+                    <dt>Ngày bắt đầu</dt><dd>15/02/2025</dd>
+                    <dt>Ngày kết thúc</dt><dd>14/02/2027</dd>
+                    <dt>Giá thuê</dt><dd class="money">2.500.000 đ</dd>
+                    <dt>Tiền cọc</dt><dd class="money">2.500.000 đ</dd>
+                  </dl>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer bg-transparent d-flex flex-wrap gap-2">
+              <a href="../print/hop-dong.html" target="_blank" class="btn btn-sm btn-light border"><i class="bi bi-printer me-1"></i>In hợp đồng</a>
+              <button class="btn btn-sm btn-light border"><i class="bi bi-calendar-plus me-1"></i>Gia hạn</button>
+              <button class="btn btn-sm btn-outline-danger ms-auto"><i class="bi bi-box-arrow-right me-1"></i>Thanh lý hợp đồng</button>
+            </div>
+          </div>
+
+          <!-- Khi phòng trống sẽ hiển thị khối này thay cho hợp đồng -->
+          <div class="card mb-3 d-none" id="phongTrongBox">
+            <div class="card-body text-center py-5">
+              <i class="bi bi-door-open fs-1 text-muted"></i>
+              <p class="text-muted mt-2">Phòng đang trống, chưa có hợp đồng.</p>
+              <a href="hop-dong-form.html" class="btn btn-primary"><i class="bi bi-plus-lg me-1"></i>Lập hợp đồng cho phòng này</a>
+            </div>
+          </div>
+
+          <div class="card table-card">
+            <div class="card-header p-0 border-0">
+              <ul class="nav nav-tabs w-100 px-3 pt-2" role="tablist">
+                <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tabHoaDon">Hóa đơn</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tabChiSo">Chỉ số điện nước</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tabLichSu">Lịch sử hợp đồng</button></li>
+              </ul>
+            </div>
+            <div class="tab-content">
+              <div class="tab-pane fade show active" id="tabHoaDon">
+                <div class="table-responsive">
+                  <table class="table table-hover">
+                    <thead><tr><th>Mã HĐ</th><th>Tháng</th><th class="text-end">Tổng tiền</th><th class="text-end">Đã thu</th><th>Trạng thái</th><th class="actions-col"></th></tr></thead>
+                    <tbody>
+                      <tr><td class="cell-main">HD2609-004</td><td>09/2026</td><td class="text-end money">2.985.000 đ</td><td class="text-end money">1.735.000 đ</td><td><span class="badge rounded-pill text-bg-info st-badge">Thu 1 phần</span></td><td class="actions-col"><a href="hoa-don-chi-tiet.html" class="btn btn-light border btn-act"><i class="bi bi-eye"></i></a></td></tr>
+                      <tr><td class="cell-main">HD2608-004</td><td>08/2026</td><td class="text-end money">3.041.000 đ</td><td class="text-end money">3.041.000 đ</td><td><span class="badge rounded-pill text-bg-success st-badge">Đã thu</span></td><td class="actions-col"><a href="hoa-don-chi-tiet.html" class="btn btn-light border btn-act"><i class="bi bi-eye"></i></a></td></tr>
+                      <tr><td class="cell-main">HD2607-004</td><td>07/2026</td><td class="text-end money">2.902.000 đ</td><td class="text-end money">2.902.000 đ</td><td><span class="badge rounded-pill text-bg-success st-badge">Đã thu</span></td><td class="actions-col"><a href="hoa-don-chi-tiet.html" class="btn btn-light border btn-act"><i class="bi bi-eye"></i></a></td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="tabChiSo">
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead><tr><th>Tháng</th><th class="text-end">Điện cũ</th><th class="text-end">Điện mới</th><th class="text-end">Tiêu thụ</th><th class="text-end">Nước cũ</th><th class="text-end">Nước mới</th><th class="text-end">Tiêu thụ</th></tr></thead>
+                    <tbody>
+                      <tr><td>09/2026</td><td class="text-end">4.512</td><td class="text-end">4.641</td><td class="text-end meter-used">129 kWh</td><td class="text-end">402</td><td class="text-end">410</td><td class="text-end meter-used">8 m³</td></tr>
+                      <tr><td>08/2026</td><td class="text-end">4.371</td><td class="text-end">4.512</td><td class="text-end meter-used">141 kWh</td><td class="text-end">394</td><td class="text-end">402</td><td class="text-end meter-used">8 m³</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="tabLichSu">
+                <div class="card-body">
+                  <ul class="timeline">
+                    <li><div class="fw-semibold">HDT-0004 · Nguyễn Văn An</div><div class="t-date">15/02/2025 → nay · Đang hiệu lực</div></li>
+                    <li><div class="fw-semibold">HDT-0001 · Kiều Thị Phương Thảo</div><div class="t-date">05/10/2023 → 15/01/2025 · Đã thanh lý, hoàn cọc 2.300.000 đ</div></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../config/app-config.js"></script>
+<script src="../assets/js/core/utils.js"></script>
+<script src="../assets/js/core/store.js"></script>
+<script src="../assets/js/services/nguoiDung.js"></script>
+<script src="../database/seed.js"></script>
+<script src="../assets/js/core/auth.js"></script>
+<script src="../assets/js/core/layout.js"></script>
+<script src="../assets/js/core/boot.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Báo cáo doanh thu · TroPro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="app-loading" data-page="bao-cao" data-title="Báo cáo doanh thu" data-perm="baocao">
+<div class="app-shell">
+  <aside class="app-sidebar" id="appSidebar"></aside>
+  <div class="app-main">
+    <header class="app-topbar" id="appTopbar"></header>
+    <main class="app-content">
+      <!-- Dữ liệu trên trang là minh họa, sẽ được render bằng JS khi nối dữ liệu -->
+      <div class="page-head">
+        <div>
+          <h2>Báo cáo doanh thu</h2>
+          <p>Doanh thu phát sinh (theo hóa đơn) và thực thu (theo phiếu thu) của các khu trọ.</p>
+        </div>
+        <div class="actions">
+          <div class="filter-bar">
+            <select class="form-select"><option>Tất cả khu</option><option>Khu A – Hòa Bình</option><option>Khu B – An Phú</option><option>Khu C – Sen Vàng</option></select>
+            <select class="form-select"><option>6 tháng gần nhất</option><option selected>12 tháng gần nhất</option><option>Năm 2026</option></select>
+          </div>
+          <button class="btn btn-light border"><i class="bi bi-printer me-1"></i>In</button>
+        </div>
+      </div>
+
+      <div class="row g-3 mb-3">
+        <div class="col-6 col-xl-3"><div class="card kpi"><div class="kpi-icon tint-blue"><i class="bi bi-graph-up-arrow"></i></div><div><div class="kpi-label">Tổng phát sinh</div><div class="kpi-value money">612,4 tr</div></div></div></div>
+        <div class="col-6 col-xl-3"><div class="card kpi"><div class="kpi-icon tint-green"><i class="bi bi-wallet2"></i></div><div><div class="kpi-label">Tổng thực thu</div><div class="kpi-value money">595,5 tr</div></div></div></div>
+        <div class="col-6 col-xl-3"><div class="card kpi"><div class="kpi-icon tint-teal"><i class="bi bi-percent"></i></div><div><div class="kpi-label">Tỉ lệ thu</div><div class="kpi-value">97,2%</div></div></div></div>
+        <div class="col-6 col-xl-3"><div class="card kpi"><div class="kpi-icon tint-amber"><i class="bi bi-house-check"></i></div><div><div class="kpi-label">Lấp đầy TB</div><div class="kpi-value">74%</div></div></div></div>
+      </div>
+
+      <div class="row g-3 mb-3">
+        <div class="col-lg-8">
+          <div class="card h-100">
+            <div class="card-header"><h3 class="card-title">Doanh thu theo tháng</h3></div>
+            <div class="card-body"><div class="chart-box"><div class="chart-placeholder"><i class="bi bi-bar-chart-line"></i><span>Cột: phát sinh · Đường: thực thu</span></div></div></div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card h-100">
+            <div class="card-header"><h3 class="card-title">Cơ cấu doanh thu</h3></div>
+            <div class="card-body"><div class="chart-box"><div class="chart-placeholder"><i class="bi bi-pie-chart"></i><span>Tiền phòng · Điện · Nước · Dịch vụ</span></div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card table-card">
+        <div class="card-header">
+          <h3 class="card-title">Tổng hợp theo khu – tháng 09/2026</h3>
+          <input type="month" class="form-control form-control-sm" style="max-width:170px" value="2026-09">
+        </div>
+        <div class="table-responsive">
+          <table class="table">
+            <thead><tr><th>Khu trọ</th><th class="text-center">Phòng thuê / Tổng</th><th>Lấp đầy</th><th class="text-end">Phát sinh</th><th class="text-end">Thực thu</th><th class="text-end">Còn nợ</th></tr></thead>
+            <tbody>
+              <tr><td class="cell-main">Khu A – Hòa Bình</td><td class="text-center">9 / 12</td><td style="min-width:140px"><div class="d-flex align-items-center gap-2"><div class="progress flex-fill"><div class="progress-bar" style="width:75%"></div></div><small>75%</small></div></td><td class="text-end money">24.630.000 đ</td><td class="text-end money">18.120.000 đ</td><td class="text-end money text-danger">7.222.000 đ</td></tr>
+              <tr><td class="cell-main">Khu B – An Phú</td><td class="text-center">7 / 10</td><td><div class="d-flex align-items-center gap-2"><div class="progress flex-fill"><div class="progress-bar" style="width:70%"></div></div><small>70%</small></div></td><td class="text-end money">16.840.000 đ</td><td class="text-end money">10.410.000 đ</td><td class="text-end money text-danger">6.430.000 đ</td></tr>
+              <tr><td class="cell-main">Khu C – Sen Vàng</td><td class="text-center">6 / 8</td><td><div class="d-flex align-items-center gap-2"><div class="progress flex-fill"><div class="progress-bar" style="width:75%"></div></div><small>75%</small></div></td><td class="text-end money">13.900.000 đ</td><td class="text-end money">9.920.000 đ</td><td class="text-end money text-danger">3.268.000 đ</td></tr>
+            </tbody>
+            <tfoot>
+              <tr class="fw-bold"><td>Tổng cộng</td><td class="text-center">22 / 30</td><td>73%</td><td class="text-end money">55.370.000 đ</td><td class="text-end money">38.450.000 đ</td><td class="text-end money text-danger">16.920.000 đ</td></tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../config/app-config.js"></script>
+<script src="../assets/js/core/utils.js"></script>
+<script src="../assets/js/core/store.js"></script>
+<script src="../assets/js/services/nguoiDung.js"></script>
+<script src="../database/seed.js"></script>
+<script src="../assets/js/core/auth.js"></script>
+<script src="../assets/js/core/layout.js"></script>
+<script src="../assets/js/core/boot.js"></script>
+</body>
+</html>

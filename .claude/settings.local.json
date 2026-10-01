@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:quanlytro.me)",
+      "Bash(node \"C:/Users/AnhDuc/AppData/Local/Temp/claude/c--Users-AnhDuc-Downloads-----n-2/dfc58fd7-8261-44c3-9ff9-318911b34804/scratchpad/build.js\")"
+    ]
+  }
+}
