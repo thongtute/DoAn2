@@ -6,7 +6,7 @@ App.config = {
   slogan: 'Quản lý phòng trọ dễ dàng',
   storagePrefix: 'tropro_',
   // Tăng số này khi thay đổi cấu trúc dữ liệu mẫu -> dữ liệu sẽ được nạp lại.
-  dataVersion: 2,
+  dataVersion: 3,
   matKhauMacDinh: '123456',
   // Hợp đồng còn <= số ngày này thì được coi là "sắp hết hạn".
   ngayNhacHetHan: 30,

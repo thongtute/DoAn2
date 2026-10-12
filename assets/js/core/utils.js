@@ -23,6 +23,11 @@
 
     sum(arr, fn) { return arr.reduce((s, x) => s + (Number(fn ? fn(x) : x) || 0), 0); },
 
+    // Bỏ dấu + chữ thường, dùng cho ô tìm kiếm ("nguyen van an" khớp "Nguyễn Văn An")
+    plain(s) {
+      return String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/đ/g, 'd').replace(/Đ/g, 'D').toLowerCase();
+    },
+
     /* ---------- Ngày tháng (dạng chuỗi ISO 'YYYY-MM-DD', tháng 'YYYY-MM') ---------- */
     toISO(d) { return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`; },
     parse(iso) { const [y, m, d] = iso.split('-').map(Number); return new Date(y, m - 1, d || 1); },
