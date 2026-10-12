@@ -16,106 +16,17 @@
   <div class="app-main">
     <header class="app-topbar" id="appTopbar"></header>
     <main class="app-content">
-      <!-- Dữ liệu trên trang là minh họa, sẽ được render bằng JS khi nối dữ liệu -->
       <div class="page-head">
         <div>
           <h2>Khu trọ</h2>
           <p>Mỗi khu trọ có giá điện, nước và các khoản dịch vụ riêng.</p>
         </div>
         <div class="actions">
-          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#khuModal"><i class="bi bi-plus-lg me-1"></i>Thêm khu trọ</button>
+          <button class="btn btn-primary" id="btnAdd"><i class="bi bi-plus-lg me-1"></i>Thêm khu trọ</button>
         </div>
       </div>
 
-      <div class="row g-3" id="khuList">
-        <!-- Thẻ khu trọ (minh họa) -->
-        <div class="col-md-6 col-xl-4">
-          <div class="card khu-card h-100">
-            <div class="khu-cover">
-              <small class="opacity-75">12 phòng · 3 tầng</small>
-              <h5>Khu A – Hòa Bình</h5>
-            </div>
-            <div class="card-body">
-              <p class="small text-muted mb-3"><i class="bi bi-geo-alt me-1"></i>25/4 Đường số 8, P. Linh Trung, TP. Thủ Đức</p>
-              <div class="khu-stats mb-3">
-                <div><div class="v text-success">9</div><div class="l">Đang thuê</div></div>
-                <div><div class="v">2</div><div class="l">Trống</div></div>
-                <div><div class="v" style="color:var(--st-baotri)">1</div><div class="l">Bảo trì</div></div>
-              </div>
-              <div class="d-flex justify-content-between small mb-1"><span class="text-muted">Lấp đầy</span><strong>75%</strong></div>
-              <div class="progress mb-3"><div class="progress-bar" style="width:75%"></div></div>
-              <div class="small">
-                <div class="d-flex justify-content-between py-1"><span class="text-muted">Điện</span><span>3.500 đ/kWh</span></div>
-                <div class="d-flex justify-content-between py-1"><span class="text-muted">Nước</span><span>18.000 đ/m³</span></div>
-                <div class="d-flex justify-content-between py-1"><span class="text-muted">Dịch vụ</span><span>Internet 100.000 · Rác 20.000</span></div>
-              </div>
-            </div>
-            <div class="card-footer bg-transparent d-flex gap-2">
-              <a href="phong.html" class="btn btn-sm btn-outline-primary flex-fill"><i class="bi bi-grid-3x3-gap me-1"></i>Sơ đồ phòng</a>
-              <button class="btn btn-sm btn-light border" data-bs-toggle="modal" data-bs-target="#khuModal" title="Sửa"><i class="bi bi-pencil"></i></button>
-              <button class="btn btn-sm btn-light border text-danger" title="Xóa"><i class="bi bi-trash"></i></button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-xl-4">
-          <div class="card khu-card h-100">
-            <div class="khu-cover c2">
-              <small class="opacity-75">10 phòng · 2 tầng</small>
-              <h5>Khu B – An Phú</h5>
-            </div>
-            <div class="card-body">
-              <p class="small text-muted mb-3"><i class="bi bi-geo-alt me-1"></i>118 Nguyễn Duy Trinh, P. Bình Trưng Tây, TP. Thủ Đức</p>
-              <div class="khu-stats mb-3">
-                <div><div class="v text-success">7</div><div class="l">Đang thuê</div></div>
-                <div><div class="v">3</div><div class="l">Trống</div></div>
-                <div><div class="v" style="color:var(--st-baotri)">0</div><div class="l">Bảo trì</div></div>
-              </div>
-              <div class="d-flex justify-content-between small mb-1"><span class="text-muted">Lấp đầy</span><strong>70%</strong></div>
-              <div class="progress mb-3"><div class="progress-bar" style="width:70%"></div></div>
-              <div class="small">
-                <div class="d-flex justify-content-between py-1"><span class="text-muted">Điện</span><span>3.800 đ/kWh</span></div>
-                <div class="d-flex justify-content-between py-1"><span class="text-muted">Nước</span><span>100.000 đ/người</span></div>
-                <div class="d-flex justify-content-between py-1"><span class="text-muted">Dịch vụ</span><span>Internet 80.000 · Gửi xe 100.000/người</span></div>
-              </div>
-            </div>
-            <div class="card-footer bg-transparent d-flex gap-2">
-              <a href="phong.html" class="btn btn-sm btn-outline-primary flex-fill"><i class="bi bi-grid-3x3-gap me-1"></i>Sơ đồ phòng</a>
-              <button class="btn btn-sm btn-light border" data-bs-toggle="modal" data-bs-target="#khuModal" title="Sửa"><i class="bi bi-pencil"></i></button>
-              <button class="btn btn-sm btn-light border text-danger" title="Xóa"><i class="bi bi-trash"></i></button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-xl-4">
-          <div class="card khu-card h-100">
-            <div class="khu-cover c3">
-              <small class="opacity-75">8 phòng · 2 tầng</small>
-              <h5>Khu C – Sen Vàng</h5>
-            </div>
-            <div class="card-body">
-              <p class="small text-muted mb-3"><i class="bi bi-geo-alt me-1"></i>7 Hẻm 42 Lê Văn Việt, P. Hiệp Phú, TP. Thủ Đức</p>
-              <div class="khu-stats mb-3">
-                <div><div class="v text-success">6</div><div class="l">Đang thuê</div></div>
-                <div><div class="v">1</div><div class="l">Trống</div></div>
-                <div><div class="v" style="color:var(--st-baotri)">1</div><div class="l">Bảo trì</div></div>
-              </div>
-              <div class="d-flex justify-content-between small mb-1"><span class="text-muted">Lấp đầy</span><strong>75%</strong></div>
-              <div class="progress mb-3"><div class="progress-bar" style="width:75%"></div></div>
-              <div class="small">
-                <div class="d-flex justify-content-between py-1"><span class="text-muted">Điện</span><span>3.500 đ/kWh</span></div>
-                <div class="d-flex justify-content-between py-1"><span class="text-muted">Nước</span><span>20.000 đ/m³</span></div>
-                <div class="d-flex justify-content-between py-1"><span class="text-muted">Dịch vụ</span><span>Internet · Rác · Vệ sinh</span></div>
-              </div>
-            </div>
-            <div class="card-footer bg-transparent d-flex gap-2">
-              <a href="phong.html" class="btn btn-sm btn-outline-primary flex-fill"><i class="bi bi-grid-3x3-gap me-1"></i>Sơ đồ phòng</a>
-              <button class="btn btn-sm btn-light border" data-bs-toggle="modal" data-bs-target="#khuModal" title="Sửa"><i class="bi bi-pencil"></i></button>
-              <button class="btn btn-sm btn-light border text-danger" title="Xóa"><i class="bi bi-trash"></i></button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="row g-3" id="khuList"></div>
     </main>
   </div>
 </div>
@@ -153,31 +64,18 @@
             <label class="form-label">Giá nước *</label>
             <div class="input-group">
               <input type="number" class="form-control" name="giaNuoc" value="20000" min="0" step="1000" required>
-              <span class="input-group-text">đ/m³</span>
+              <span class="input-group-text" id="nuocUnit">đ/m³</span>
             </div>
           </div>
           <div class="col-12">
             <label class="form-label d-flex justify-content-between align-items-center">
               <span>Dịch vụ cố định hằng tháng</span>
-              <button type="button" class="btn btn-sm btn-link p-0"><i class="bi bi-plus-circle me-1"></i>Thêm dịch vụ</button>
+              <button type="button" class="btn btn-sm btn-link p-0" id="btnAddDv"><i class="bi bi-plus-circle me-1"></i>Thêm dịch vụ</button>
             </label>
             <div class="table-responsive border rounded">
               <table class="table table-sm mb-0">
                 <thead><tr><th>Tên dịch vụ</th><th style="width:160px">Đơn giá (đ)</th><th style="width:150px">Tính theo</th><th style="width:40px"></th></tr></thead>
-                <tbody id="dichVuRows">
-                  <tr>
-                    <td><input class="form-control form-control-sm" value="Internet"></td>
-                    <td><input type="number" class="form-control form-control-sm" value="100000"></td>
-                    <td><select class="form-select form-select-sm"><option value="phong">Mỗi phòng</option><option value="nguoi">Mỗi người</option></select></td>
-                    <td><button type="button" class="btn btn-sm text-danger"><i class="bi bi-x-lg"></i></button></td>
-                  </tr>
-                  <tr>
-                    <td><input class="form-control form-control-sm" value="Rác"></td>
-                    <td><input type="number" class="form-control form-control-sm" value="20000"></td>
-                    <td><select class="form-select form-select-sm"><option value="phong">Mỗi phòng</option><option value="nguoi">Mỗi người</option></select></td>
-                    <td><button type="button" class="btn btn-sm text-danger"><i class="bi bi-x-lg"></i></button></td>
-                  </tr>
-                </tbody>
+                <tbody id="dichVuRows"></tbody>
               </table>
             </div>
           </div>
@@ -196,15 +94,27 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.21.0/dist/jquery.validate.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="../config/app-config.js"></script>
 <script src="../assets/js/core/utils.js"></script>
 <script src="../assets/js/core/store.js"></script>
+<script src="../assets/js/services/caiDat.js"></script>
+<script src="../assets/js/services/khuTro.js"></script>
+<script src="../assets/js/services/phong.js"></script>
+<script src="../assets/js/services/khachThue.js"></script>
+<script src="../assets/js/services/hopDong.js"></script>
+<script src="../assets/js/services/chiSo.js"></script>
+<script src="../assets/js/services/hoaDon.js"></script>
+<script src="../assets/js/services/thanhToan.js"></script>
+<script src="../assets/js/services/baoHong.js"></script>
+<script src="../assets/js/services/baoCao.js"></script>
 <script src="../assets/js/services/nguoiDung.js"></script>
 <script src="../database/seed.js"></script>
 <script src="../assets/js/core/auth.js"></script>
 <script src="../assets/js/core/layout.js"></script>
 <script src="../assets/js/core/boot.js"></script>
+<script src="../assets/js/pages/khu-tro.js"></script>
 </body>
 </html>
