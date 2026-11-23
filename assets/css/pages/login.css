@@ -1,0 +1,21 @@
+/* Trang Đăng nhập – public/login.html
+   Bên trái: giới thiệu (ẩn trên màn hình nhỏ). Bên phải: form đăng nhập. */
+
+.auth-page { min-height: 100vh; display: grid; grid-template-columns: 1.1fr 1fr; background: #fff; }
+
+.auth-hero {
+  background: radial-gradient(circle at 20% 20%, #14b8a6 0, transparent 45%), linear-gradient(150deg, #0f172a 0%, #0f766e 100%);
+  color: #fff; padding: 3rem; display: flex; flex-direction: column; justify-content: space-between;
+}
+.auth-hero h1 { font-weight: 700; font-size: 2.1rem; line-height: 1.25; }
+.auth-hero .feature { display: flex; gap: .8rem; align-items: flex-start; margin-bottom: 1rem; }
+.auth-hero .feature i { font-size: 1.3rem; color: #5eead4; }
+
+.auth-form-wrap { display: flex; align-items: center; justify-content: center; padding: 2rem 1rem; }
+.auth-form { width: 100%; max-width: 400px; }
+.demo-accounts .btn { text-align: left; }
+
+@media (max-width: 991.98px) {
+  .auth-page { grid-template-columns: 1fr; }
+  .auth-hero { display: none; }
+}

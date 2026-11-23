@@ -1,0 +1,17 @@
+/* Trang Khu trọ – admin/khu-tro.html
+   Thẻ khu trọ được vẽ bởi assets/js/pages/khu-tro.js (hàm card). */
+
+/* Phần đầu thẻ có nền gradient, 3 màu xoay vòng: (mặc định) / c2 / c3 */
+.khu-card .khu-cover {
+  height: 92px; border-radius: var(--radius) var(--radius) 0 0;
+  background: linear-gradient(135deg, #0f766e, #14b8a6);
+  color: #fff; padding: 1rem 1.1rem; display: flex; flex-direction: column; justify-content: flex-end;
+}
+.khu-card .khu-cover.c2 { background: linear-gradient(135deg, #1d4ed8, #60a5fa); }
+.khu-card .khu-cover.c3 { background: linear-gradient(135deg, #b45309, #f59e0b); }
+.khu-card .khu-cover h5 { margin: 0; font-weight: 700; }
+
+/* 3 ô số: Đang thuê / Trống / Bảo trì */
+.khu-stats { display: grid; grid-template-columns: repeat(3, 1fr); text-align: center; gap: .5rem; }
+.khu-stats .v { font-weight: 700; font-size: 1.1rem; }
+.khu-stats .l { font-size: .72rem; color: var(--muted); }

@@ -1,0 +1,9 @@
+/* Trang Lập hợp đồng – admin/hop-dong-form.html
+   Form chia 3 bước, mỗi bước có số thứ tự tròn ở tiêu đề card.
+   Khối "Tóm tắt hợp đồng" bên phải dùng .summary-card/.summary-row trong components.css. */
+
+.step-title { display: flex; align-items: center; gap: .6rem; font-weight: 600; }
+.step-num {
+  width: 26px; height: 26px; border-radius: 50%; background: var(--brand); color: #fff;
+  display: grid; place-items: center; font-size: .8rem; font-weight: 700;
+}

@@ -1,0 +1,6 @@
+/* Trang Chốt điện nước – admin/chot-dien-nuoc.html
+   Bảng nhập chỉ số mới cho cả khu. Dòng đã lập hóa đơn bị khóa (row-locked). */
+
+.meter-input { width: 110px; text-align: right; }
+tr.row-locked { background: #f8fafc; }
+tr.row-locked .meter-input { background: #f1f5f9; }

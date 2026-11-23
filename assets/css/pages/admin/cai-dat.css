@@ -1,0 +1,4 @@
+/* Trang Cài đặt – admin/cai-dat.html */
+
+/* Dòng ghi chú nhỏ dưới các nút sao lưu / khôi phục */
+.demo-note { font-size: .75rem; color: var(--muted); }

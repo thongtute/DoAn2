@@ -1,0 +1,8 @@
+/* Trang Chi tiết hóa đơn – admin/hoa-don-chi-tiet.html
+   Khung hóa đơn bên trái; khung QR bên phải dùng .qr-box trong components.css. */
+
+.invoice-box { background: #fff; }
+.invoice-head { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.invoice-title { font-size: 1.25rem; font-weight: 700; letter-spacing: .02em; }
+.invoice-table th { background: transparent !important; }
+.invoice-total { font-size: 1.15rem; font-weight: 700; color: var(--brand); }

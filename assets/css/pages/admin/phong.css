@@ -1,0 +1,35 @@
+/* Trang Sơ đồ phòng – admin/phong.html
+   Thẻ phòng được vẽ bởi assets/js/pages/phong.js (hàm roomCard).
+   Màu viền trên của thẻ lấy từ biến --st (xem .st-* trong components.css). */
+
+/* ---------- Chú thích màu trạng thái ---------- */
+.legend { display: flex; flex-wrap: wrap; gap: 1rem; font-size: .8rem; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: .4rem; }
+
+/* ---------- Nhóm theo khu, rồi theo tầng ---------- */
+.khu-block + .khu-block { margin-top: 1.75rem; }
+.khu-title { font-weight: 700; font-size: 1rem; margin-bottom: .75rem; display: flex; align-items: center; gap: .5rem; }
+.floor-label { font-size: .75rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; margin: .9rem 0 .5rem; }
+
+/* ---------- Lưới thẻ phòng ---------- */
+.room-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: .75rem; }
+.room-card {
+  display: block; position: relative; color: inherit; text-decoration: none;
+  background: #fff; border: 1px solid var(--border); border-top: 4px solid var(--st);
+  border-radius: 10px; padding: .75rem .85rem; transition: box-shadow .15s, transform .15s;
+}
+.room-card:hover { color: inherit; box-shadow: 0 8px 18px rgba(15, 23, 42, .08); transform: translateY(-2px); }
+.room-head { display: flex; justify-content: space-between; align-items: flex-start; gap: .5rem; }
+.room-head > div { min-width: 0; }
+.room-code { font-weight: 700; font-size: 1.05rem; }
+.room-status {
+  font-size: .66rem; font-weight: 600; color: var(--st); text-transform: uppercase; letter-spacing: .03em;
+  white-space: nowrap; padding: .15rem .45rem; border-radius: 99px;
+  background: color-mix(in srgb, var(--st) 12%, transparent);
+}
+.room-meta { font-size: .76rem; color: var(--muted); margin-top: .15rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.room-tenant { font-size: .85rem; margin-top: .55rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.room-tenant.empty { color: var(--muted); font-style: italic; }
+.room-foot { display: flex; justify-content: space-between; align-items: center; margin-top: .35rem; font-size: .8rem; }
+.room-price { font-weight: 600; }
+.room-debt { color: var(--st-no); font-weight: 600; }
