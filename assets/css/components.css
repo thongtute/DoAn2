@@ -1,0 +1,152 @@
+/* =========================================================
+   components.css – Thành phần dùng lại ở NHIỀU trang
+   Chỉ đưa vào đây những class xuất hiện từ 2 trang trở lên.
+   Class chỉ dùng ở 1 trang -> để trong pages/<tên trang>.css
+   ========================================================= */
+
+/* ---------- Đầu trang: tiêu đề + nút thao tác (mọi trang) ---------- */
+.page-head {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: .75rem; margin-bottom: 1.25rem;
+}
+.page-head h2 { font-size: 1.3rem; font-weight: 700; margin: 0; }
+.page-head p { margin: .15rem 0 0; color: var(--muted); }
+.page-head .actions { display: flex; flex-wrap: wrap; gap: .5rem; }
+
+.breadcrumb { font-size: .8rem; margin-bottom: .35rem; }
+
+/* ---------- Card (mọi trang) ---------- */
+.card {
+  border: 1px solid var(--border); border-radius: var(--radius);
+  box-shadow: 0 1px 2px rgba(16, 24, 40, .04);
+}
+.card-header {
+  background: transparent; border-bottom: 1px solid var(--border);
+  padding: .85rem 1.1rem; font-weight: 600;
+  display: flex; align-items: center; justify-content: space-between; gap: .5rem;
+}
+.card-header .card-title { margin: 0; font-size: .95rem; font-weight: 600; }
+.card-body { padding: 1.1rem; }
+
+/* ---------- Thanh lọc (phong, hop-dong, hoa-don, cong-no, khach-thue, bao-cao, chot-dien-nuoc) ---------- */
+.filter-bar { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; }
+.filter-bar .form-select, .filter-bar .form-control { width: auto; min-width: 150px; }
+.filter-bar .search { min-width: 220px; }
+@media (max-width: 575.98px) {
+  .filter-bar .form-select, .filter-bar .form-control, .filter-bar .search { width: 100%; min-width: 0; }
+}
+
+/* ---------- Thẻ KPI (dashboard, hoa-don, cong-no, bao-cao, phong-chi-tiet, tenant/index) ---------- */
+.kpi { display: flex; flex-direction: row; align-items: center; gap: .9rem; padding: 1rem 1.1rem; height: 100%; }
+.kpi > div:last-child { min-width: 0; }
+.kpi-icon {
+  width: 46px; height: 46px; border-radius: 12px; flex-shrink: 0;
+  display: grid; place-items: center; font-size: 1.3rem;
+}
+.kpi-label { color: var(--muted); font-size: .8rem; }
+.kpi-value { font-size: 1.35rem; font-weight: 700; line-height: 1.25; }
+.kpi-sub { font-size: .75rem; color: var(--muted); }
+
+/* Nền màu nhạt cho icon */
+.tint-teal { background: #ccfbf1; color: #0f766e; }
+.tint-blue { background: #dbeafe; color: #1d4ed8; }
+.tint-amber { background: #fef3c7; color: #b45309; }
+.tint-red { background: #fee2e2; color: #b91c1c; }
+.tint-slate { background: #e2e8f0; color: #334155; }
+.tint-violet { background: #ede9fe; color: #6d28d9; }
+.tint-green { background: #dcfce7; color: #15803d; }
+
+/* ---------- Bảng (hầu hết các trang danh sách) ---------- */
+.table { --bs-table-hover-bg: #f8fafc; margin-bottom: 0; }
+.table > thead th {
+  font-size: .72rem; text-transform: uppercase; letter-spacing: .04em;
+  color: var(--muted); font-weight: 600; background: #f8fafc; white-space: nowrap;
+  border-bottom-width: 1px;
+}
+.table > :not(caption) > * > * { padding: .7rem .85rem; vertical-align: middle; }
+.table .actions-col { width: 1%; white-space: nowrap; text-align: right; }
+.table-card .table > thead th:first-child, .table-card .table td:first-child { padding-left: 1.1rem; }
+.table-card .table > thead th:last-child, .table-card .table td:last-child { padding-right: 1.1rem; }
+.cell-main { font-weight: 600; }
+.cell-sub { font-size: .78rem; color: var(--muted); }
+.money { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.btn-act { padding: .2rem .45rem; font-size: .85rem; border-radius: 6px; }
+
+/* ---------- Nhãn trạng thái (sinh ra từ App.utils.badge) ---------- */
+.st-badge { font-weight: 500; font-size: .72rem; padding: .35em .7em; }
+.text-bg-warning.st-badge { color: #7c4a03 !important; background: #fef3c7 !important; }
+.text-bg-success.st-badge { color: #166534 !important; background: #dcfce7 !important; }
+.text-bg-danger.st-badge { color: #991b1b !important; background: #fee2e2 !important; }
+.text-bg-info.st-badge { color: #1e40af !important; background: #dbeafe !important; }
+.text-bg-secondary.st-badge { color: #334155 !important; background: #e2e8f0 !important; }
+.text-bg-dark.st-badge { color: #5b21b6 !important; background: #ede9fe !important; }
+
+/* ---------- Ảnh đại diện chữ cái (topbar, khach-thue, nhan-vien, phong-chi-tiet, tenant) ---------- */
+.avatar {
+  width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+  background: var(--brand-soft); color: var(--brand);
+  display: grid; place-items: center; font-weight: 700; font-size: .8rem;
+}
+
+/* ---------- Màu trạng thái phòng (dashboard, phong) ---------- */
+.legend-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--st); display: inline-block; }
+.st-trong { --st: var(--st-trong); }
+.st-dangThue { --st: var(--st-thue); }
+.st-no { --st: var(--st-no); }
+.st-sapHetHan { --st: var(--st-han); }
+.st-baoTri { --st: var(--st-baotri); }
+
+/* ---------- Thanh tiến độ (dashboard, khu-tro, bao-cao) ---------- */
+.progress { height: 6px; border-radius: 99px; }
+.progress-bar { background: var(--brand); }
+
+/* ---------- Danh sách nhãn : giá trị (phong-chi-tiet, hoa-don-chi-tiet, tenant) ---------- */
+.info-list { display: grid; grid-template-columns: 140px 1fr; gap: .45rem .75rem; margin: 0; }
+.info-list dt { font-weight: 500; color: var(--muted); font-size: .85rem; }
+.info-list dd { margin: 0; font-weight: 500; }
+@media (max-width: 575.98px) { .info-list { grid-template-columns: 1fr; gap: .1rem; } .info-list dd { margin-bottom: .5rem; } }
+
+.list-compact .list-group-item { padding: .7rem 1.1rem; border-color: var(--border); }
+
+/* ---------- Khối tóm tắt tiền (hop-dong-form, tenant/hoa-don) ---------- */
+.summary-card { position: sticky; top: calc(var(--topbar-h) + 1rem); }
+.summary-row { display: flex; justify-content: space-between; padding: .35rem 0; font-size: .875rem; }
+.summary-row.total { border-top: 1px dashed var(--border); margin-top: .35rem; padding-top: .6rem; font-weight: 700; font-size: 1rem; }
+
+/* ---------- Số điện nước tiêu thụ (chot-dien-nuoc, phong-chi-tiet) ---------- */
+.meter-used { font-weight: 600; color: var(--brand); }
+
+/* ---------- Khung mã QR (hoa-don-chi-tiet, cai-dat, tenant/hoa-don) ---------- */
+.qr-box { text-align: center; padding: 1rem; border: 1px dashed var(--border); border-radius: var(--radius); }
+.qr-box img { width: 100%; max-width: 230px; }
+.qr-placeholder {
+  width: 200px; height: 200px; margin: 0 auto; border-radius: 10px; background: #f1f5f9;
+  display: grid; place-items: center; color: var(--muted); font-size: 3rem;
+}
+
+/* ---------- Biểu đồ (dashboard, bao-cao) ---------- */
+.chart-box { position: relative; height: 290px; }
+.chart-placeholder {
+  height: 100%; border-radius: 10px; background: repeating-linear-gradient(45deg, #f8fafc, #f8fafc 10px, #f1f5f9 10px, #f1f5f9 20px);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--muted); gap: .4rem;
+}
+.chart-placeholder i { font-size: 2rem; }
+
+/* ---------- Trạng thái rỗng (sinh ra từ App.utils.empty) ---------- */
+.empty-state { text-align: center; padding: 2.5rem 1rem; color: var(--muted); }
+.empty-state i { font-size: 2.4rem; display: block; margin-bottom: .5rem; opacity: .6; }
+
+/* ---------- Timeline lịch sử (phong-chi-tiet, tenant/hop-dong) ---------- */
+.timeline { list-style: none; padding: 0; margin: 0; position: relative; }
+.timeline li { position: relative; padding: 0 0 1rem 1.4rem; }
+.timeline li::before {
+  content: ''; position: absolute; left: 4px; top: 6px; width: 9px; height: 9px;
+  border-radius: 50%; background: var(--brand);
+}
+.timeline li::after { content: ''; position: absolute; left: 8px; top: 18px; bottom: 0; width: 1px; background: var(--border); }
+.timeline li:last-child::after { display: none; }
+.timeline .t-date { font-size: .75rem; color: var(--muted); }
+
+/* ---------- Khác ---------- */
+.check-group { display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; }   /* nhóm checkbox: phong, nhan-vien */
+.dashed-sep { border-top: 1px dashed var(--border); margin: .75rem 0; } /* đường kẻ đứt: dashboard, phong-chi-tiet */
